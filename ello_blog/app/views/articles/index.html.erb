@@ -1,0 +1,20 @@
+<h1>Articles List</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to "#{article.title}", article_path(article.id) %>
+
+      <td><%= article.body %></td>
+      <td><%= article.author.username %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if admin %>
+  <%= link_to "New Article", new_article_path %>
+<% end %>

@@ -18,41 +18,61 @@ class ArticlesController < ApplicationController
 
   # GET FORM for new article: articles/new
   def new
-    @article = Article.new
+    if admin
+      @article = Article.new
+    else
+      redirect :index
+    end
   end
 
   # GET FORM to edit one article: articles/:id/edit
   def edit
-    @article = Article.find(params[:id])
+    if admin
+      @article = Article.find(params[:id])
+    else
+      redirect :index
+    end
   end
 
   # POST new article: /articles
   def create
-    @article = Article.new(article_params)
+    if admin
+      @article = Article.new(article_params)
 
-    if @article.save
-      redirect_to @article
+      if @article.save
+        redirect_to @article
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      redirect :index
     end
   end
 
   # PUT updates to one article: articles/:id
   def update
-    @article = Article.find(params[:id])
+    if admin
+      @article = Article.find(params[:id])
 
-    # Can pass only the attributes you want to update
-    if @article.update(article_params)
-      redirect_to @article
+      # Can pass only the attributes you want to update
+      if @article.update(article_params)
+        redirect_to @article
+      else
+        render "edit"
+      end
     else
-      render "edit"
+      redirect :index
     end
   end
 
   # DELETE one article: articles/:id
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
+    if admin
+      @article = Article.find(params[:id])
+      @article.destroy
+    else
+      redirect :index
+    end
   end
 
   private

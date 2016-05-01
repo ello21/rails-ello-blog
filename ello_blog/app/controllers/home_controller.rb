@@ -1,1 +1,6 @@
-home_controller.rb
+class HomeController < ApplicationController
+  def index
+    @articles = Article.all
+    @categories = Category.all
+  end
+end
