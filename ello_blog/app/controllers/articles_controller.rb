@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include ApplicationHelper
   # A frequent practice is to place the standard
   # CRUD actions in each controller in the following
   # order: index, show, new, edit, create, update and destroy.
@@ -21,7 +22,7 @@ class ArticlesController < ApplicationController
     if admin
       @article = Article.new
     else
-      redirect :index
+      redirect_to articles_path
     end
   end
 
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
     if admin
       @article = Article.find(params[:id])
     else
-      redirect :index
+      redirect_to articles_path
     end
   end
 
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
         render 'new'
       end
     else
-      redirect :index
+      redirect_to articles_path
     end
   end
 
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
         render "edit"
       end
     else
-      redirect :index
+      redirect_to articles_path
     end
   end
 
@@ -71,7 +72,7 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
       @article.destroy
     else
-      redirect :index
+      redirect_to articles_path
     end
   end
 

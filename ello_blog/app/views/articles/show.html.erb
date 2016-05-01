@@ -12,5 +12,11 @@
   <strong>Author:</strong>
   <%= @article.author.username %>
 </p>
+<br>
 
+<!-- LINKS -->
+<%= link_to "Edit", edit_article_path(@article) %>
+<br>
+<%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure??"} %>
+<br>
 <%= link_to 'Back', articles_path %>
