@@ -1,0 +1,28 @@
+<%= form_for @article do |f| %>
+	<!-- ERRORS  -->
+	<% if @article.errors.any? %>
+		<div class="errors" id="error-article-form">
+			<h2>Hey! There's an issue or two with your submission:</h2>
+			<ul>
+				<% @article.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<!-- END ERRORS -->
+
+	<div>
+		<%= f.label :title %></br>
+		<%= f.text_field :title %>
+	</div>
+
+	<div>
+		<%= f.label :body %></br>
+		<%= f.text_area :body %>
+	</div>
+
+	<div>
+		<%= f.submit "Submit" %></br>
+	</div>
+<% end %>
