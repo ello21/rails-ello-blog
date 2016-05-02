@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160501175931) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.integer  "author_id",       null: false
     t.integer  "category_id",     null: false
@@ -40,6 +43,6 @@ ActiveRecord::Schema.define(version: 20160501175931) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
