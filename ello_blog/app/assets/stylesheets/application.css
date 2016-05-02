@@ -52,6 +52,10 @@ p {
 	background-image: url("tileable-starfield-patterns-5.jpg");
 	padding:1em;
 	color: white;
+
+	-webkit-box-shadow: 0 6px 4px -4px black;
+  	-moz-box-shadow: 0 6px 4px -4px black;
+  	box-shadow: 0 6px 4px -4px black;
 }
 
 #site-header-title {
@@ -59,6 +63,7 @@ p {
 	font-family: 'Molle', cursive;
 	font-size:4em;
 	margin-bottom: 0em;
+	text-shadow: 2px 3px 3px #000;
 
 }
 
@@ -126,7 +131,7 @@ ul.nav{
 }
 
 .nav a:link{
-	/*color:#fff;*/
+
 }
 
 .nav a:visited{
@@ -134,18 +139,17 @@ ul.nav{
 }
 
 .nav a:focus{
-	/*color:#000;
-	background-color:#fff;*/
+
 }
 
 .nav a:hover{
-	/*color:#fff;
-	background-color:green;*/
+	color: #009973;
+	text-shadow: 2px 3px 3px #000;
+
 }
 
 .nav a:active{
-	/*color:#fff;
-	background-color:red;*/
+
 }
 
 /*@media (min-width:700px){
@@ -192,13 +196,15 @@ ul.nav{
 	font-size:1.8em;
 	margin: 3px auto;
 	font-family: 'Oswald', sans-serif;
-	text-shadow: 3px 4px 5px #000;
-
+	text-shadow: 2px 3px 3px #000;
+	color: #009973;
 }
 
 #aside-subheader {
 	font-family: 'Satisfy', cursive;
 	font-size:1.3em;
+	margin-bottom: 0.5em;
+	border-bottom: 2px black solid;
 
 }
 #aside-background {
@@ -210,13 +216,50 @@ ul.nav{
 
 .transparent-layer {
 	width:90%;
-	margin: 15px auto 0 auto;
+	height: 90%;
+	margin: 0.5em auto 0 auto;
 	background-color: gray;
-	opacity: 0.8;
+	background: rgba(20,20,20, 0.9);
+	padding-top: 1.5em;
+}
+
+.transparent-layer a{
+	color: white;
+	text-decoration: none;
+}
+
+.transparent-layer a:hover{
+	text-decoration: underline;
+	color: #009973;
+}
+
+img {
+	opacity: 1;
+	border: 1px solid #cc0052;
+}
+.square-32 {
+	font-family: 'Oswald', sans-serif;
 
 }
 
+.username{
+	font-size: 0.8em;
+	font-style: italic;
+	padding-bottom: 3em;
+}
 
+.article-title{
+	font-family: 'Oswald', sans-serif;
+	color: black;
+}
+
+#recent {
+	font-family: 'Satisfy', cursive;
+
+}
 .footer{
 	padding:1em 5%;
+	background-image: url("tileable-starfield-patterns-5.jpg");
+
 }
+

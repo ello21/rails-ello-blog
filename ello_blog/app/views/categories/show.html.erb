@@ -1,15 +1,18 @@
 <h1><%= @category.name %></h1>
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-  </tr>
+
 
   <% @articles.each do |article| %>
     <tr>
-      <td><%= link_to "#{article.title}", article_path(article.id) %>
-      <td><%= article.body %></td>
-      <td><%= article.author.username %></td>
+      <td class="article-title"><%= link_to "#{article.title}", article_path(article.id) %></td>
+    </tr>
+    <tr>
+      <td><%= article.body.slice(0..177) %>...</td>
+    </tr>
+
+    <tr>
+      <td class="username">by <%= article.author.username %></td>
+    </tr>
 
       <% if admin %>
         <%= link_to "Edit", edit_article_path(@article) %>
@@ -23,3 +26,4 @@
 <% if admin %>
   <%= link_to "New Article", new_article_path %>
 <% end %>
+

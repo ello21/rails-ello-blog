@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   include ApplicationHelper
 
   def index
-    @articles = Article.all
-    @categories = Category.all
+    redirect_to articles_path
   end
 end
