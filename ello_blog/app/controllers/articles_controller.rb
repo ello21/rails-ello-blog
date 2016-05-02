@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include ApplicationHelper
   # A frequent practice is to place the standard
   # CRUD actions in each controller in the following
   # order: index, show, new, edit, create, update and destroy.
@@ -18,41 +19,61 @@ class ArticlesController < ApplicationController
 
   # GET FORM for new article: articles/new
   def new
-    @article = Article.new
+    if admin
+      @article = Article.new
+    else
+      redirect_to articles_path
+    end
   end
 
   # GET FORM to edit one article: articles/:id/edit
   def edit
-    @article = Article.find(params[:id])
+    if admin
+      @article = Article.find(params[:id])
+    else
+      redirect_to articles_path
+    end
   end
 
   # POST new article: /articles
   def create
-    @article = Article.new(article_params)
+    if admin
+      @article = Article.new(article_params)
 
-    if @article.save
-      redirect_to @article
+      if @article.save
+        redirect_to @article
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      redirect_to articles_path
     end
   end
 
   # PUT updates to one article: articles/:id
   def update
-    @article = Article.find(params[:id])
+    if admin
+      @article = Article.find(params[:id])
 
-    # Can pass only the attributes you want to update
-    if @article.update(article_params)
-      redirect_to @article
+      # Can pass only the attributes you want to update
+      if @article.update(article_params)
+        redirect_to @article
+      else
+        render "edit"
+      end
     else
-      render "edit"
+      redirect_to articles_path
     end
   end
 
   # DELETE one article: articles/:id
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
+    if admin
+      @article = Article.find(params[:id])
+      @article.destroy
+    else
+      redirect_to articles_path
+    end
   end
 
   private

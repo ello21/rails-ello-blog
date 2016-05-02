@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get "articles/:id/edit" => "articles#edit", as: :edit_article
   get "articles/:id"      => "articles#show", as: :article
 
-  post "articles"         => "articles#create", as: :articles
-  put "articles/:id"      => "articles#update", as: :article
-  patch "articles/:id"    => "articles#update", as: :article
-  delete "articles/:id"   => "articles#destroy", as: :article
+  post "articles"         => "articles#create"
+  put "articles/:id"      => "articles#update"
+  patch "articles/:id"    => "articles#update"
+  delete "articles/:id"   => "articles#destroy"
 
   # CATEGORY ROUTES
   get "categories/"         => "categories#index", as: :categories
@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get "categories/:id/edit" => "categories#edit", as: :edit_category
   get "categories/:id"      => "categories#show", as: :category
 
-  post "categories/"        => "categories#create", as: :categories
-  put "categories/:id"      => "categories#update", as: :cateogry
-  patch "categories/:id"    => "categories#update", as: :cateogry
-  delete "categories/:id"   => "categories#destroy", as: :categories
+  post "categories/"        => "categories#create"
+  put "categories/:id"      => "categories#update"
+  patch "categories/:id"    => "categories#update"
+  delete "categories/:id"   => "categories#destroy"
 
   # USER ROUTES
   get "users"          => "users#index", as: :users
@@ -28,10 +28,10 @@ Rails.application.routes.draw do
   get "users/:id/edit" => "users#edit", as: :edit_user
   get "users/:id"      => "users#show", as: :user
 
-  post "users"         => "users#create", as: :users
-  put "users/:id"      => "users#update", as: :user
-  patch "users/:id"    => "users#update", as: :user
-  delete "users/:id"   => "users#destroy", as: :user
+  post "users"         => "users#create"
+  put "users/:id"      => "users#update"
+  patch "users/:id"    => "users#update"
+  delete "users/:id"   => "users#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ElloBlog</title>
+  <title>Ello! Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Molle:400italic|Oswald|Satisfy|PT+Sans:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+		<div class="header">
+			<h1 id="site-header-title">
+				<%= link_to root_path do %>
+					Ello<span id="exclamation">!</span>
+				<% end %>
+			</h1>
+			<p id="site-header-subtitle">Musings of a Brown Girl in Tech</p>
+		</div>
 
-<%= yield %>
+		<div class="nav-bar">
+			<ul class="nav">
+				<li><%= link_to "FRESHY", category_path(id: 1) %></li>
+				<li><%= link_to "TWL", category_path(id: 4) %></li>
+				<li><%= link_to "TECH CONNECTIONS", category_path(id: 3) %></li>
+				<li><%= link_to "AROUND TOWN", category_path(id: 2) %></li>
+			</ul>
+		</div>
 
+		<div class="content">
+			<div class="main">
+				<%= yield %>
+			</div>
+
+
+			<div class="aside">
+				<h3 id="aside-header">TECH CONNECTIONS</h3>
+				<p id="aside-subheader">Networks and Resources for Women and Minorities in Tech</p>
+				<div id="aside-background">
+					<div class="transparent-layer col-32">
+
+						<!-- SQUARES -->
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://devbootcamp.com/">
+									<%= image_tag("dbc_prev.jpg") %>
+								</a>
+							</div>
+							<p><a href="http://devbootcamp.com/">Dev Bootcamp</a></p>
+						</div>
+
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://www.yeswecode.org/">
+									<%= image_tag("ywc2_prev.jpg") %>
+								</a>
+							</div>
+							<p><a href="http://www.yeswecode.org/">#YesWeCode</a></p>
+						</div>
+
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://intouch.ccgmag.com/?page=woc_Conference2">
+									<%= image_tag("woc_prev.jpg") %>
+									</a>
+							</div>
+							<p><a href="http://intouch.ccgmag.com/?page=woc_Conference2">Women of Color in STEM</a></p>
+						</div>
+
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://www.code2040.org/">
+									<%= image_tag("code-2040_prev.jpg") %>
+								</a>
+							</div>
+							<p><a href="http://www.code2040.org/">Code 2040</a></p>
+						</div>
+
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://www.blackgirlscode.com/">
+									<%= image_tag("black-girls-code_prev.jpg") %>
+								</a>
+							</div>
+							<p><a href="http://www.blackgirlscode.com/">Black Girls Code</a></p>
+						</div>
+
+						<div class="square-32">
+							<div class="img-gal">
+								<a href="http://ghc.anitaborg.org/">
+									<%= image_tag("ghc2_prev.jpg") %>
+								</a>
+							</div>
+							<p><a href="http://ghc.anitaborg.org/">Grace Hopper Celebration</a></p>
+						</div>
+
+						<!-- END SQUARES -->
+
+					</div>
+				</div>
+			</div>
+
+			<div class="footer">
+
+			</div>
+		</div>
+	</div>
 </body>
 </html>
