@@ -49,7 +49,7 @@ p {
 
 .header {
 	background-color:#ccc;
-	background-image: url("tileable-starfield-patterns-5.jpg");
+	background-image: url("tileable-starfield-patterns-5-min.jpg");
 	padding:1em;
 	color: white;
 
@@ -210,7 +210,7 @@ ul.nav{
 #aside-background {
 	width: 100%;
 	height: 100%;
-	background-image: url("exotic-purple-distortions-part-2-3.png");
+	background-image: url("exotic-purple-distortions-part-2-3-min.png");
 	box-shadow: inset 0px 0px 30px rgba(0,0,0,0.9);
 }
 
@@ -259,7 +259,7 @@ img {
 }
 .footer{
 	padding:1em 5%;
-	background-image: url("tileable-starfield-patterns-5.jpg");
+	background-image: url("tileable-starfield-patterns-5-min.jpg");
 
 }
 
